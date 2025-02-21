@@ -3,21 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 3</title>
+    <title>CSS Cascade and Inheritance</title>
     <!-- Internal CSS: Defined in the <head> -->
     <style>
-        h1 {
-            color: darkblue;
+        /* Example of inheritance: body’s color will be inherited by all child elements */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;  /* This will be inherited by child elements unless overridden */
         }
+
+        /* CSS Cascade - Specificity example: Override general p style */
+        p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        /* More specific selector: Override the general p style */
+        .highlighted-text {
+            color: red;  /* This will override the previous p color due to specificity */
+        }
+
+        /* Inline style (strongest specificity): Will override both of the above */
+        p {
+            font-size: 18px;  /* Cascade rule - applied to all p tags */
+        }
+
+        h1 {
+            color: darkblue; /* Example of internal CSS overriding external CSS */
+        }
+
     </style>
     <!-- External CSS: Linked from style.css -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to Assignment 3</h1>
-    
-    <p style="color: green;">This is an example of inline CSS.</p> <!-- Inline CSS -->
+    <h1>CSS Cascade and Inheritance</h1>
 
-    <p>This is an example of an external CSS style applied to this paragraph.</p>
+    <!-- This paragraph will inherit the color from the body tag (which is #333) -->
+    <p>This paragraph will inherit the color from the body tag (which is #333).</p>
+
+    <!-- This paragraph will override the inherited color and have a red color -->
+    <p class="highlighted-text">This paragraph has a red color due to a more specific class selector.</p>
+
+    <!-- This paragraph has inline CSS that will override any other CSS applied to it -->
+    <p style="color: blue;">This paragraph has inline CSS, so it will be blue, overriding other rules.</p>
+
+    <div>
+        <!-- This paragraph will inherit the font family and color from the parent div -->
+        <p>This paragraph will inherit its styles from its parent (div), including font-family and color.</p>
+    </div>
+
 </body>
 </html>
+
