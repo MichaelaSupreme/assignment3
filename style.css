@@ -1,9 +1,13 @@
-/* External CSS */
+/* External CSS - Example of overriding */
+h1 {
+    color: darkgreen; /* External style */
+}
+
+/* More external styles can go here */
 body {
-    font-family: Arial, sans-serif;
+    background-color: lightyellow;
 }
 
 p {
-    color: #555;
-    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace; /* External style affecting all p elements */
 }
